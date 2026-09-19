@@ -73,9 +73,9 @@ public class HttpRequest extends Builder {
     private Boolean wrapAsMultipart           = DescriptorImpl.wrapAsMultipart;
     private Boolean useSystemProperties       = DescriptorImpl.useSystemProperties;
     private boolean useNtlm                   = DescriptorImpl.useNtlm;
+	private boolean followRedirects           = DescriptorImpl.followRedirects;
     private List<HttpRequestNameValuePair> customHeaders = DescriptorImpl.customHeaders;
     private List<HttpRequestFormDataPart> formData = DescriptorImpl.formData;
-	private boolean followRedirects           = DescriptorImpl.followRedirects;
 
     @DataBoundConstructor
     public HttpRequest(@NonNull String url) {
@@ -491,9 +491,9 @@ public class HttpRequest extends Builder {
         public static final boolean  wrapAsMultipart           = true;
         public static final Boolean  useSystemProperties       = false;
         public static final boolean  useNtlm                   = false;
+		public static final boolean  followRedirects           = true;
         public static final List<HttpRequestNameValuePair> customHeaders = Collections.emptyList();
         public static final List<HttpRequestFormDataPart> formData = Collections.emptyList();
-		public static final boolean followRedirects	           = true;
 
         public DescriptorImpl() {
             load();

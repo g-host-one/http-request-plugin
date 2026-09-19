@@ -383,11 +383,10 @@ class Registers {
 	static void registerRedirects() {
 		registerHandler("/redirects", HttpMode.HEAD, new SimpleHandler() {
 			@Override
-			void doHandle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response) throws IOException {
+			boolean doHandle(Request request, Response response, Callback callback) {
 				assertEquals("HEAD", request.getMethod());
-
-				response.sendRedirect(request.getScheme() + "://" +
-						request.getServerName() + ":" + request.getServerPort() + "/doHEAD");
+				Response.sendRedirect(request, response, callback, 302,"/doHEAD", false);
+				return false;
 			}
 		});
 	}

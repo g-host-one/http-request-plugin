@@ -104,6 +104,7 @@ public class HttpRequestExecution extends MasterToSlaveCallable<ResponseContentS
     private final boolean wrapAsMultipart;
 
     private final boolean useNtlm;
+	private final boolean followRedirects;
     private final boolean useSystemProperties;
     private final String validResponseCodes;
     private final String validResponseContent;
@@ -116,8 +117,6 @@ public class HttpRequestExecution extends MasterToSlaveCallable<ResponseContentS
 
     private final OutputStream remoteLogger;
     private transient PrintStream localLogger;
-
-	private final boolean followRedirects;
 
     static HttpRequestExecution from(HttpRequest http,
                                      EnvVars envVars, AbstractBuild<?, ?> build, TaskListener taskListener) {

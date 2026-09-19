@@ -332,7 +332,7 @@ public final class HttpRequestStep extends Step {
         public static final boolean  wrapAsMultipart           = HttpRequest.DescriptorImpl.wrapAsMultipart;
         public static final Boolean  useSystemProperties       = HttpRequest.DescriptorImpl.useSystemProperties;
         public static final boolean  useNtlm                   = HttpRequest.DescriptorImpl.useNtlm;
-		public static final boolean followRedirects            = HttpRequest.DescriptorImpl.followRedirects;
+		public static final boolean  followRedirects           = HttpRequest.DescriptorImpl.followRedirects;
 		public static final List <HttpRequestNameValuePair> customHeaders = Collections.emptyList();
         public static final List <HttpRequestFormDataPart> formData = Collections.emptyList();
         public static final String outputFile = "";
