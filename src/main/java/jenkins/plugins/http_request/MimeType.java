@@ -1,6 +1,6 @@
 package jenkins.plugins.http_request;
 
-import org.apache.http.entity.ContentType;
+import org.apache.hc.core5.http.ContentType;
 
 import hudson.util.ListBoxModel;
 
@@ -16,6 +16,7 @@ public enum MimeType {
     APPLICATION_FORM_DATA(ContentType.MULTIPART_FORM_DATA),
     APPLICATION_JSON(ContentType.create("application/json")),
     APPLICATION_JSON_UTF8(ContentType.APPLICATION_JSON),
+    APPLICATION_JSON_MERGE_PATCH(ContentType.create("application/merge-patch+json")),
     APPLICATION_TAR(ContentType.create("application/x-tar")),
     APPLICATION_ZIP(ContentType.create("application/zip")),
     APPLICATION_OCTETSTREAM(ContentType.APPLICATION_OCTET_STREAM);

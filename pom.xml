@@ -27,12 +27,12 @@ THE SOFTWARE.
 	<parent>
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
-		<version>4.54</version>
+		<version>6.2221.va_045130417c9</version>
 		<relativePath />
 	</parent>
 
 	<artifactId>http_request</artifactId>
-	<version>${revision}${changelist}</version>
+	<version>${revision}.${changelist}</version>
 	<packaging>hpi</packaging>
 	<name>HTTP Request Plugin</name>
 	<description>
@@ -48,13 +48,17 @@ THE SOFTWARE.
 	</licenses>
 
 	<properties>
-		<revision>1.17</revision>
-		<changelist>-SNAPSHOT</changelist>
+		<revision>1</revision>
+		<changelist>999999-SNAPSHOT</changelist>
 		<gitHubRepo>jenkinsci/http-request-plugin</gitHubRepo>
-                <jenkins.version>2.361.4</jenkins.version>
+		<!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+		<jenkins.baseline>2.479</jenkins.baseline>
+		<jenkins.version>${jenkins.baseline}.3</jenkins.version>
+		<spotbugs.effort>Max</spotbugs.effort>
 		<spotbugs.failOnError>true</spotbugs.failOnError>
 		<spotbugs.threshold>Low</spotbugs.threshold>
 		<hpi.compatibleSinceVersion>1.16</hpi.compatibleSinceVersion>
+		<ban-junit4-imports.skip>false</ban-junit4-imports.skip>
 	</properties>
 
 	<repositories>
@@ -75,8 +79,8 @@ THE SOFTWARE.
 		<dependencies>
 			<dependency>
 				<groupId>io.jenkins.tools.bom</groupId>
-                                <artifactId>bom-2.361.x</artifactId>
-                                <version>1798.vc671fe94856f</version>
+				<artifactId>bom-${jenkins.baseline}.x</artifactId>
+				<version>5054.v620b_5d2b_d5e6</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
@@ -85,8 +89,8 @@ THE SOFTWARE.
 
 	<dependencies>
 		<dependency>
-			<groupId>org.jenkins-ci.plugins</groupId>
-			<artifactId>apache-httpcomponents-client-4-api</artifactId>
+			<groupId>io.jenkins.plugins</groupId>
+			<artifactId>apache-httpcomponents-client-5-api</artifactId>
 		</dependency>
 
 		<dependency>
